@@ -3,14 +3,15 @@ import java.util.Map;
 public class Purchase {
     protected String title;
     protected int count;
-    protected Purchase[] purchases = new Purchase[4];
+    protected Purchase[] purchases; // размер массива вынес в переменную, которая будет зависеть от количества продуктов в хэшмапе
 
     public Purchase(String title, int count) {
         this.title = title;
         this.count = count;
     }
 
-    public Purchase() {
+    public Purchase(int countOfProducts) {
+        this.purchases = new Purchase[countOfProducts];
     }
 
     public void addPurchase(String title, int count) {
@@ -30,10 +31,9 @@ public class Purchase {
         long sum = 0;
         System.out.println("КОРЗИНА:");
         for (int i = 0; i < purchases.length; i++) {
-            Purchase purchase = purchases[i];
-            if (purchase == null) continue;
-            System.out.println("\t" + purchase.title + " " + purchase.count + " шт. в сумме " + (purchase.count * prices.get(purchase.title)) + " руб.");
-            sum += purchase.count * prices.get(purchase.title);
+            if (purchases[i] == null) continue; // удалил лишнюю строку, которая в каждой итерации создавала объект
+            System.out.println("\t" + purchases[i].title + " " + purchases[i].count + " шт. в сумме " + (purchases[i].count * prices.get(purchases[i].title)) + " руб.");
+            sum += purchases[i].count * prices.get(purchases[i].title);
         }
         return sum;
     }

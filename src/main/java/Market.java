@@ -1,12 +1,12 @@
-import Category.Products;
-import Category.Categories;
+import category.Categories;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public final class Market {
     private static Market instance;
     private Market(){}
-    private HashMap<String, Categories> category = new HashMap<>();
+    private Map<String, Categories> category = new HashMap<>();
     public static Market getInstance(){
         if (instance == null) instance = new Market();
         return instance;
@@ -15,7 +15,7 @@ public final class Market {
         category.put(nameCategory, categories);
     }
 
-    public HashMap<String, Categories> getCategory(){
+    public Map<String, Categories> getCategory(){
         return category;
     }
 }

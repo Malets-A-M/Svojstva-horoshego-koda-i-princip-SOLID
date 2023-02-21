@@ -1,6 +1,6 @@
-import Category.Devices;
-import Category.NameCategory;
-import Category.Products;
+import category.Device;
+import category.NameCategory;
+import category.Product;
 
 public class Main {
     /**
@@ -16,8 +16,8 @@ public class Main {
      */
     public static void main(String[] args) {
         Market market = Market.getInstance(); // вынес продукты магазина в отдельные классы singleton, чтобы было лакониченей управлять ассортиментом
-        market.addCategory(NameCategory.Products, Products.getInstance());
-        market.addCategory(NameCategory.Devices, Devices.getInstance());
+        market.addCategory(NameCategory.Products, Product.getInstance());
+        market.addCategory(NameCategory.Devices, Device.getInstance());
         market.getCategory().get(NameCategory.Products)
                 .add("Хлеб", 56)
                 .add("Масло", 153)

@@ -14,7 +14,7 @@ public class Products implements Categories {
         return instance;
     }
 
-    protected HashMap<String, Integer> list = new HashMap<>();
+    protected Map<String, Integer> list = new HashMap<>();
 
     @Override
     public String category() {
@@ -27,7 +27,7 @@ public class Products implements Categories {
         return this;
     }
     @Override
-    public HashMap<String, Integer> getList(){
+    public Map<String, Integer> getList(){
         return list;
     }
 

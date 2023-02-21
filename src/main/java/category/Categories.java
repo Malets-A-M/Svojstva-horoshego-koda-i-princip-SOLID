@@ -1,14 +1,14 @@
-package Category;
+package category;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public interface Categories {
     String category ();
     Categories add(String title, Integer price);
-    HashMap<String, Integer> getList();
+    Map<String, Integer> getList();
     void printList();
     default void assortment(){
-        System.out.println("В МАГАЗИНЕ В РАЗДЕЛЕ " + category() + " В НАЛИЧИИ");
+        System.out.println("В МАГАЗИНЕ В РАЗДЕЛЕ " + category() + " В НАЛИЧИИ:");
         printList();
     }
 }

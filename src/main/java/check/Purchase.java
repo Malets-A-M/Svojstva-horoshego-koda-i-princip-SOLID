@@ -1,3 +1,5 @@
+package check;
+
 import java.util.Map;
 
 public class Purchase {
@@ -26,15 +28,7 @@ public class Purchase {
             }
         }
     }
-
-    public long sum(Map<String, Integer> prices) {
-        long sum = 0;
-        System.out.println("КОРЗИНА:");
-        for (int i = 0; i < purchases.length; i++) {
-            if (purchases[i] == null) continue; // удалил лишнюю строку, которая в каждой итерации создавала объект
-            System.out.println("\t" + purchases[i].title + " " + purchases[i].count + " шт. в сумме " + (purchases[i].count * prices.get(purchases[i].title)) + " руб.");
-            sum += purchases[i].count * prices.get(purchases[i].title);
-        }
-        return sum;
+    public Purchase[] getPurchases(){
+        return purchases;
     }
 }

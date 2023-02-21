@@ -1,16 +1,16 @@
-package Category;
+package category;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public final class Devices implements Categories {
-    private static Devices instance;
+public final class Device implements Categories {
+    private static Device instance;
 
-    private Devices() {
+    private Device() {
     }
 
-    public static Devices getInstance() {
-        if (instance == null) instance = new Devices();
+    public static Device getInstance() {
+        if (instance == null) instance = new Device();
         return instance;
     }
 

@@ -1,4 +1,4 @@
-package Category;
+package category;
 
 public final class NameCategory {
     public static final String Products = "ПРОДУКТЫ";

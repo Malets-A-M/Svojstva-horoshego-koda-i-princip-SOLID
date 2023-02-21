@@ -1,16 +1,16 @@
-package Category;
+package category;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Products implements Categories {
-    private static Products instance;
+public class Product implements Categories {
+    private static Product instance;
 
-    private Products() {
+    private Product() {
     }
 
-    public static Products getInstance() {
-        if (instance == null) instance = new Products();
+    public static Product getInstance() {
+        if (instance == null) instance = new Product();
         return instance;
     }
 
